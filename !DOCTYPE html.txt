@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffcccc;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            position: relative;
+        }
+        .message {
+            font-size: 2rem;
+            color: #d10000;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no {
+            background-color: #ffffff;
+            color: #d10000;
+            position: absolute;
+        }
+        .dog-gif {
+            margin-top: 20px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="message">Puchi, will you be my Valentine? ❤️</h1>
+        <img class="dog-gif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGpqcXVqYnJ5Z2Vxa2M2MDg5enU5dmZmMHdud2p0MjN6cmdhMmNodyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/138cD2rL96PEHe/giphy.gif" alt="Cute dachshund">
+        <div class="buttons">
+            <button class="yes" onclick="showLove()">Yes 💖</button>
+            <button class="no" onmouseover="moveButton()">No 💔</button>
+        </div>
+    </div>
+    <script>
+        function moveButton() {
+            let button = document.querySelector(".no");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+        function showLove() {
+            document.body.innerHTML = "<h1 style='color: #d10000; font-size: 3rem;'>I knew you'd say yes! 💕😍</h1>" +
+                                     "<img class='dog-gif' src='https://media.giphy.com/media/ZEB6yFbLnhyRK/giphy.gif' alt='Happy dachshund'>";
+        }
+    </script>
+</body>
+</html>
